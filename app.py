@@ -279,4 +279,6 @@ with gr.Blocks() as demo:
         outputs=[history_display_box, delete_dropdown]
     )
 
-demo.launch(inline=False, share=True)
+import os
+port = int(os.environ.get("PORT", 7860))
+demo.launch(server_name="0.0.0.0", server_port=port)
